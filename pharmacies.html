@@ -174,7 +174,7 @@
 	
 		var initialDate = moment([2017, 0, 21]);
 
-		var currentDate = moment([2017, 4, 25]);
+		var currentDate = moment();
 
 		var pharms = [
 			{
@@ -212,7 +212,7 @@
 				'phone': 'Fone: 3623-1773',
 				'reference': 'unkown'
 			}
-		]
+		];
 
 		var holdPharmName = document.getElementById('pharmacy');
 
@@ -220,7 +220,11 @@
 
 		var holdPharmPhone = document.getElementById('phone');
 
-		var holdPharmReference = document.getElementById('reference')
+		var holdPharmReference = document.getElementById('reference');
+
+		var holdDay = document.getElementById('day');
+
+		var holdMonth = document.getElementById('month');
 
 		function setPharmaci () {
 
@@ -271,15 +275,45 @@
 				phone = pharms[4].phone;
 				reference = pharms[4].reference;
 
-			}
+			};
 
 			 holdPharmName.innerHTML = todayPharmy;
 			 holdPharmAdress.innerHTML = adress;
 			 holdPharmPhone.innerHTML = phone;
 			 holdPharmReference.innerHTML = reference;	
-		}	
+		};
 
 		setPharmaci ();
+
+		var months = [
+			"January",
+			 "February",
+			  "March",
+			   "April",
+			    "May",
+			     "June",
+			      "July",
+			       "August",
+			        "September",
+			         "Octuber",
+			          "November",
+			           "Decenber"
+		];
+
+
+			var d = new Date();
+
+			var day = d.getDate();
+
+			holdDay.innerHTML = day;
+
+			var month = d.getMonth();
+
+			holdMonth.innerHTML = months[month];
+
+		};
+
+		setDay ();
 
 	</script>
 
