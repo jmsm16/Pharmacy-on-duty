@@ -16,6 +16,7 @@
 
 	body {
 		margin: 0;
+		background-color: #f5f3ee;
 	}
 
 	#container {
@@ -29,6 +30,7 @@
 	#title {
 		font-family: helvetica;
 		margin-top: 0;
+		padding-top: 10px;
 
 	}
 
@@ -36,20 +38,23 @@
 		overflow: auto;
 		border-radius: 20px;
 		border: 1px solid rgba(0, 0, 0, 0.5);
+		max-width: 500px;
 	}
 
 	#month {
 		font-size: 35px;
-		background-color: red;
+		background-color: #7d1935;
+		color: #fff;
 		margin-top: 0;
-		margin-bottom: 30px;
+		margin-bottom: 0; 
 		padding-bottom: 10px;
 		padding-top: 5px;
 	}
 
 	#day {
 		margin: 0;
-		padding-bottom: 30px;
+		padding-top: 15px;
+		padding-bottom: 15px;
 		font-size: 75px;
 		
 	}
@@ -58,7 +63,6 @@
 		margin: 0;
 		padding: 15px 0;
 		font-size: 35px;
-		background-color: green;
 	}
 
 	#information {
@@ -83,7 +87,9 @@
 	footer {
 		text-align: center;
 		height: 10vh;
-		background-color: grey;
+		background-color: #ececea;
+		border-top: 1px solid #e4dbdb;
+		border-radius: 5px;
 		padding: 15px 0 0 0;
 	}
 
@@ -94,6 +100,37 @@
 
 	.notreal {
 		text-decoration: line-through;
+	}
+
+	.backcolor {
+		background-color: #e9e581;
+	}
+
+	@media only screen and (min-width: 768px) {
+
+		#calendar {
+			overflow: auto;
+			border-radius: 20px;
+			border: 1px solid rgba(0, 0, 0, 0.5);
+			max-width: 500px;
+			margin: 0 auto;
+		}
+
+		.information {
+			margin: 15px 0;
+		}
+
+		#information div {
+			text-align: center;
+			margin-top: 25px;
+		}
+
+		#information {
+			text-align: left;
+			max-width: 500px;
+			margin: 0 auto;
+		}
+
 	}
 
 
@@ -110,8 +147,8 @@
 		<h1 id="title">FARMACIA DE PLANTÃO</h1>
 		<div id="calendar">
 			<p id="month">Fevereiro</p>
-			<p id="day">31</p>
-			<p id="pharmacy" class="">DALE FARMA</p>
+			<p id="day" class="backcolor">31</p>
+			<p id="pharmacy" class="backcolor">DALE FARMA</p>
 		</div>
 		<div id="information">
 			<h3 class="information" id="adress">Rua: paranagua n° 937</h3>
