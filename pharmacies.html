@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<!--<link rel="stylesheet"  href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet"  href="bootstrap/css/bootstrap-grid.css">
+	<link rel="stylesheet"  href="bootstrap/css/bootstrap-reboot.css">-->
+	<title>pharmacies</title>
+
+	<style type="text/css">
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+	}
+
+	#container {
+		width: 100%;
+		height: 90vh;
+		text-align: center;
+		padding: 0 6px;
+
+	}
+
+	#title {
+		font-family: helvetica;
+		margin-top: 0;
+
+	}
+
+	#calendar {
+		overflow: auto;
+		border-radius: 20px;
+		border: 1px solid rgba(0, 0, 0, 0.5);
+	}
+
+	#month {
+		font-size: 35px;
+		background-color: red;
+		margin-top: 0;
+		margin-bottom: 30px;
+		padding-bottom: 10px;
+		padding-top: 5px;
+	}
+
+	#day {
+		margin: 0;
+		padding-bottom: 30px;
+		font-size: 75px;
+		
+	}
+
+	#pharmacy {
+		margin: 0;
+		padding: 15px 0;
+		font-size: 35px;
+		background-color: green;
+	}
+
+	#information {
+		text-align: left;
+	}
+
+	#information div {
+		text-align: center;
+	}
+
+	.information {
+		margin: 5px 0;
+	}
+
+
+	#information div h3 {
+
+		margin-bottom: 0;
+		margin-top: 10px;
+	}
+
+	footer {
+		text-align: center;
+		height: 10vh;
+		background-color: grey;
+		padding: 15px 0 0 0;
+	}
+
+	footer p {
+		margin: 0;
+
+	}
+
+	.notreal {
+		text-decoration: line-through;
+	}
+
+
+
+
+		
+		
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<h1 id="title">FARMACIA DE PLANTÃO</h1>
+		<div id="calendar">
+			<p id="month">Fevereiro</p>
+			<p id="day">31</p>
+			<p id="pharmacy" class="">DALE FARMA</p>
+		</div>
+		<div id="information">
+			<h3 class="information" id="adress">Rua: paranagua n° 937</h3>
+			<h3 class="information" id="phone">Phone: 3623-3409</h3>
+			<div>
+				<h3 class="" id="reference">Ao lado da praça, em frente ao banco badesco</h3>
+			</div>
+		</div>
+
+	</div>
+	<footer>
+		<p>&copy; João Mateus Seguessi Munhoz</p>
+	</footer>
+
+
+
+
+	<!--<script type="text/javascript" src="script/myjs.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>-->
+	<script type="text/javascript" src="script/moment.js"></script>
+	<script type="text/javascript">
+	
+		var initialDate = moment([2017, 0, 21]);
+
+		var currentDate = moment();
+
+		//var pharmacies = ['MASTERFARMA', 'DaleFarma', 'Farmacia Viver Mais', 'Farmacia Araguai', 'Farmacia Droga Nova' ];
+
+		var masterFarma = {
+			'name': 'MASTERFARMA',
+			'adress': 'Rua: Iguaçu n° 1337',
+			'phone': 'Fone: 3623-3170',
+			'reference': 'Subindo para o pombal, proximo ao continetal e ao supermercado Boa Vista'
+		}
+
+		var holdPharmName = document.getElementById('pharmacy');
+
+		var holdPharmAdress = document.getElementById('adress');
+
+		var holdPharmPhone = document.getElementById('phone');
+
+		var holdPharmReference = document.getElementById('reference')
+
+		function setPharmaci () {
+
+			var dif = currentDate.diff(initialDate, 'days');
+
+			var mod = dif % 35;
+
+			var todayPharmy = '';
+
+			var adress = '';
+
+			var phone = '';
+
+			var reference = '';
+
+			if ( mod >= 0  && mod <= 6) {
+
+				todayPharmy = masterFarma.name;
+				adress = masterFarma.adress;
+				phone = masterFarma.phone;
+				reference = masterFarma.reference;
+
+			} else if (mod >= 7 && mod <= 13) {
+
+				todayPharmy = pharmacies[1]
+
+			} else if (mod >= 14 && mod <= 20) {
+
+				todayPharmy = pharmacies[2]
+
+			} else if (mod >= 21 && mod <= 27) {
+
+				todayPharmy = pharmacies[3]
+
+			} else if (mod >= 28 && mod <= 34) {
+
+				todayPharmy = pharmacies[4]
+
+			}
+
+			 holdPharmName.innerHTML = todayPharmy;
+			 holdPharmAdress.innerHTML = adress;
+			 holdPharmPhone.innerHTML = phone;
+			 holdPharmReference.innerHTML = reference;	
+		}	
+
+		setPharmaci ();
+
+
+		//{'year':2017, 'month': 3, 'date': 01, 'hour': 00, 'minutes': 00, 'seconds': 00}
+
+	</script>
+
+</body>
+</html>
