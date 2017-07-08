@@ -150,9 +150,10 @@
 		</div>
 		<div id="information">
 			<h3 class="information" id="adress"></h3>
-			<h3 class="information" id="phone">Phone: 3623-3409</h3>
+			<h3 class="information" id="phone"></h3>
 			<div>
-				<h3 class="" id="reference">Ao lado da praça, em frente ao banco badesco</h3>
+				<h3 class="" id="reference"></h3>
+				<h3 class="" id="time"></h3>
 			</div>
 		</div>
 
@@ -172,14 +173,16 @@
 				'name': 'MASTERFARMA',
 				'adress': '<i class="fa fa-map-marker" aria-hidden="true"></i> Rua: <span class="anounce">Iguaçu n° 1337</span>',
 				'phone': '<i class="fa fa-phone" aria-hidden="true"></i> Fone: <span class="anounce">3623-3170</span>',
-				'reference': 'Subindo para o pombal, proximo ao continetal e ao supermercado Boa Vista'
+				'reference': 'Subindo para o pombal, proximo ao continetal e ao supermercado Boa Vista',
+				'time' : 'De plantão ate as 21:00'
 			},
 
 			{
 				'name': 'DALEFARMA',
 				'adress': '<i class="fa fa-map-marker" aria-hidden="true"></i> Rua: <span class="anounce">Paranagua n° 937</span>',
 				'phone': '<i class="fa fa-phone" aria-hidden="true"></i> Fone: <span class="anounce">3623-2409</span>',
-				'reference': 'Em frente à antiga radio'
+				'reference': 'Em frente à antiga radio',
+				'time' : 'De plantão ate as 21:00'
 
 			},
 
@@ -187,21 +190,24 @@
 				'name': 'FARMACIA VIVER MAIS',
 				'adress': '<i class="fa fa-map-marker" aria-hidden="true"></i> Rua: <span class="anounce">São Paulo n° 535</span>',
 				'phone': '<i class="fa fa-phone" aria-hidden="true"></i> Fone: <span class="anounce">3623-1240 </span>',
-				'reference': 'em frente ao banco Bradesco'
+				'reference': 'Em frente ao banco Bradesco',
+				'time' : 'De plantão ate as 21:00'
 			},
 
 			{
 				'name': 'FARMACIA GUAIRA',
 				'adress': '<i class="fa fa-map-marker" aria-hidden="true"></i> Rua: <span class="anounce">Belo Horizonte n° 493</span>',
 				'phone': '<i class="fa fa-phone" aria-hidden="true"></i> Fone: <span class="anounce">3623-1213</span>',
-				'reference': 'Em frente ao posto da norma'
+				'reference': 'Em frente ao posto da norma',
+				'time' : 'De plantão ate as 20:00'
 			},
 
 			{
 				'name': 'FARMACIA DROGANOVA',
 				'adress': '<i class="fa fa-map-marker" aria-hidden="true"></i> Rua: <span class="anounce">Urbano Lunardelli n° 313</span>',
 				'phone': '<i class="fa fa-phone" aria-hidden="true"></i> Fone: <span class="anounce">3623-1773</span>',
-				'reference': 'Farmacia do robertinho proximo a Casabela'
+				'reference': 'Farmacia do robertinho proximo a Casabela',
+				'time' : 'De plantão ate as 21:00'
 			}
 		];
 
@@ -212,6 +218,8 @@
 		var holdPharmPhone = document.getElementById('phone');
 
 		var holdPharmReference = document.getElementById('reference');
+
+		var holdPharmTime = document.getElementById('time');
 
 		var holdDay = document.getElementById('day');
 
@@ -231,12 +239,16 @@
 
 			var reference = '';
 
+			var time = '';
+
 			if ( mod >= 0  && mod <= 6) {
 
 				todayPharmy = pharms[0].name;
 				adress = pharms[0].adress;
 				phone = pharms[0].phone;
 				reference = pharms[0].reference;
+				time = pharms[0].time;
+
 
 			} else if (mod >= 7 && mod <= 13) {
 
@@ -244,6 +256,7 @@
 				adress = pharms[1].adress;
 				phone = pharms[1].phone;
 				reference = pharms[1].reference;
+				time = pharms[1].time;
 
 			} else if (mod >= 14 && mod <= 20) {
 
@@ -251,6 +264,7 @@
 				adress = pharms[2].adress;
 				phone = pharms[2].phone;
 				reference = pharms[2].reference;
+				time = pharms[2].time;
 
 			} else if (mod >= 21 && mod <= 27) {
 
@@ -258,6 +272,7 @@
 				adress = pharms[3].adress;
 				phone = pharms[3].phone;
 				reference = pharms[3].reference;
+				time = pharms[3].time;
 
 			} else if (mod >= 28 && mod <= 34) {
 
@@ -265,13 +280,15 @@
 				adress = pharms[4].adress;
 				phone = pharms[4].phone;
 				reference = pharms[4].reference;
+				time = pharms[4].time;
 
 			};
 
 			 holdPharmName.innerHTML = todayPharmy;
 			 holdPharmAdress.innerHTML = adress;
 			 holdPharmPhone.innerHTML = phone;
-			 holdPharmReference.innerHTML = reference;	
+			 holdPharmReference.innerHTML = reference;
+			 holdPharmTime.innerHTML = time;	
 		};
 
 		setPharmaci ();
